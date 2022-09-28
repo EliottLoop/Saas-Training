@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.model" id="model_presale_order">
+        <field name="name">Presale Order</field>
+        <field name="model">x_presale.order</field>
+    </record>
+
+    <record model="ir.model.fields" id="field_presale_order_partner_id">
+        <field name="name">x_partner_id</field>
+        <field name="field_description">Partner id</field>
+        <field name="model_id" ref="model_presale_order" />
+        <field name="ttype">many2one</field>
+        <field name="relation">res.partner</field>
+    </record>
+
+    <record model="ir.model.fields" id="field_presale_order_lines">
+        <field name="name">x_order_lines</field>
+        <field name="field_description">Order Lines</field>
+        <field name="model_id" ref="model_presale_order" />
+        <field name="ttype">many2many</field>
+        <field name="relation">x_presale.order.line</field>
+    </record>
+
+    <record model="ir.model.fields" id="field_presale_order_state">
+        <field name="name">x_state</field>
+        <field name="field_description">State</field>
+        <field name="model_id" ref="model_presale_order" />
+        <field name="ttype">selection</field>
+        <field name="selection">[["new","New"],["validated","Validated"],["cancelled","Cancelled"]]</field>
+    </record>
+</odoo>

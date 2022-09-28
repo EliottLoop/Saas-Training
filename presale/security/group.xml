@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_sales_people" model="res.groups">
+        <field name="name">Sales People</field>
+        <field name="category_id" ref="base.module_category_presale_presale"/>
+    </record>
+</odoo>
